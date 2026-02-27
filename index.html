@@ -516,15 +516,16 @@ async function chamarEntregador(pedidoId) {
         };
 
         // Envio para a API
-        const response = await fetch("https://entregasexpressas.com/api/v1/orders", {
-            method: "POST",
-            headers: {
-                "Authorization": `Bearer ${config.bearer_token}`,
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify(dadosEntrega)
-        });
+       const response = await fetch("https://entregasexpressas.com.br/api/v1/orders", {
+    method: "POST",
+    headers: {
+        // O .trim() é essencial para garantir que o token vá limpo
+        "Authorization": `Bearer ${config.bearer_token.trim()}`,
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    body: JSON.stringify(dadosEntrega)
+});
 
         const resultado = await response.json();
 
@@ -550,5 +551,6 @@ async function chamarEntregador(pedidoId) {
 </body>
 
 </html>
+
 
 
