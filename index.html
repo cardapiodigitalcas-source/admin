@@ -516,7 +516,7 @@ async function chamarEntregador(pedidoId) {
         };
 
         // Envio para a API
-        const response = await fetch("https://entregasexpressas.com/api/v1/orders", {
+        const response = await fetch("https://entregasexpressas.com.br/api/v1/orders", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${config.bearer_token}`,
@@ -548,4 +548,5 @@ async function chamarEntregador(pedidoId) {
 
 </script>
 </body>
+
 </html>
